@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+   php42:
+    build: .
+    volumes:
+      #Substitute "DIR" with your path that contains your index.php or index.html
+      - DIR:/var/www/html
+    ports:
+      - 80:80
