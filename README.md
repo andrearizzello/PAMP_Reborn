@@ -52,8 +52,8 @@ otherwise send me a message on slack 🙂
 
 ## Stopping containers:
 
-If you want to just stop the servers and keep saved your data
-go to number 1
+If you wish to just stop the servers and keep saved your data
+go to number 1 otherwise go to number 2
 
 1. Run ```docker-compose down``` to completely remove the webserver apache and mysql BUT without removing your mysql data
 
