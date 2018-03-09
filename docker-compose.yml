@@ -1,10 +1,24 @@
 version: '3.3'
 
 services:
-   php42:
-    build: .
-    volumes:
-      #Substitute "DIR" with your path that contains your index.php or index.html
-      - DIR:/var/www/html
-    ports:
-      - 80:80
+    db:
+        image: mysql
+        volumes:
+            - dbdata:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: admin
+            MYSQL_DATABASE: defDB
+            #MYSQL_USER: defUSER                <-- uncomment if you want to enable the normal user
+            #MYSQL_PASSWORD: defPASSWD          <-- uncomment if you want to enable the password for the normal user
+    php42:
+        depends_on:
+            - db
+        links:
+            - db
+        image: arizzell/php42:php-apache
+        volumes:
+            - DIR:/var/www/html                #<-- replace DIR with the folder of your project (usually where you have the index.php or index.html file)
+        ports:
+            - 80:80
+volumes:
+    dbdata:
