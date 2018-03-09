@@ -38,24 +38,23 @@ cd PAMP_Reborn
 
 ## How to use it with php:
 
-1. create an ```index.php``` file and put inside this code:
+1. copy ```index.php``` form the current directory to your folder of your project
 
+now we need the ip of our virtual machine ```dev``` so in your shell type:
 ```
-<?php
-$servername = "db";
-$username = "root";
-$password = "admin";
+docker-machine ip dev
+```
+copy the ip that you get and paste it into your browser
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=dbtest", $username, $password);
-    echo "Connected successfully";
-}
-catch(PDOException $e)
-{
-    echo "Connection failed: " . $e->getMessage();
-}
-```
+If everything went fine you should see ```Connected successfully```
+
+otherwise send me a message on slack 🙂
 
 ## Stopping containers:
 
-1. Run ```docker-compose down --volumes``` to completely remove the webserver apache and mysql
+If you want to just stop the servers and keep saved your data
+go to number 1
+
+1. Run ```docker-compose down``` to completely remove the webserver apache and mysql BUT without removing your mysql data
+
+2. Run ```docker-compose down --volumes``` to completely remove everything!
