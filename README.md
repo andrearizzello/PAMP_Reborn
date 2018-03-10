@@ -26,7 +26,7 @@ docker-machine create dev && eval $(docker-machine env dev)
 ## Installation:
 
 1. Run this command to clone the repo into ```/tmp```
-```
+```zsh
 cd /tmp && \
 git clone https://github.com/andrearizzello/PAMP_Reborn.git && \
 cd PAMP_Reborn
@@ -38,7 +38,8 @@ cd PAMP_Reborn
 
 ## How to use it with php:
 
-1. copy ```index.php``` form the current directory to your folder of your project
+1. copy ```index.php``` form the current directory to your folder of your project (the same that you used in the installation paragraph)
+
 
 now we need the ip of our virtual machine ```dev``` so in your shell type:
 ```
